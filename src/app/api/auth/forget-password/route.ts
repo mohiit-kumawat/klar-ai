@@ -48,6 +48,8 @@ export async function POST(req: NextRequest) {
     const resend = new Resend(process.env.RESEND_API_KEY);
     const baseURL = getAppUrl();
     const resetURL = `${baseURL}/auth/reset-password?token=${resetToken}`;
+    const emailFrom = process.env.EMAIL_FROM || "Klar <onboarding@resend.dev>";
+    const replyTo = process.env.REPLY_TO;
 
     const emailHtml = `<!DOCTYPE html>
   <html lang="en">
@@ -63,7 +65,7 @@ export async function POST(req: NextRequest) {
           <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="560" style="max-width:560px;width:100%;">
             <tr>
               <td align="center" style="padding:0 0 24px;">
-                <img src="https://klar.abdulrdeveloper.me/klar.png" alt="Klar" width="40" height="40" style="display:block;border:0;width:45px;height:45px;border-radius:8px;">
+                <img src="${baseURL}/klar.png" alt="Klar" width="40" height="40" style="display:block;border:0;width:45px;height:45px;border-radius:8px;">
               </td>
             </tr>
             <tr>
@@ -92,11 +94,11 @@ export async function POST(req: NextRequest) {
   </html>`;
 
     await resend.emails.send({
-      from: "Klar <noreply@abdulrdeveloper.me>",
+      from: emailFrom,
       to: email,
       subject: "Reset your Klar password",
       html: emailHtml,
-      replyTo: "dev@abdulrdeveloper.me",
+      ...(replyTo ? { replyTo } : {}),
     });
 
     return NextResponse.json({ success: true });

@@ -156,7 +156,7 @@ await resend.emails.send({
   to: email,
   subject: "Verify your Klar account",
   html: emailHtml,
-  replyTo: "mohiit.kumawat@gmail.com",
+  ...(replyTo ? { replyTo } : {}),
 });
 
     return NextResponse.json(
