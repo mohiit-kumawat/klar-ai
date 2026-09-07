@@ -23,7 +23,7 @@ export default function Footer() {
           className="hover:underline"
           style={{ color: "hsl(228,6%,44%)" }}
         >
-          abdulrdeveloper
+          mohiit-kumawat
         </a>
       </p>
     </footer>
