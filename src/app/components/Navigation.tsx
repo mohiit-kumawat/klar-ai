@@ -47,7 +47,7 @@ export default function Navigation() {
 
         <div className="flex items-center gap-3 justify-end">
           <a
-            href="#"
+            href="https://github.com/mohiit-kumawat/klar-ai"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="View source on GitHub"

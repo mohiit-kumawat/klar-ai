@@ -39,7 +39,7 @@ Live site:
 1. Clone the repo
 
 ```bash
-git clone 
+git clone https://github.com/mohiit-kumawat/klar-ai
 cd klar
 ```
 
@@ -59,7 +59,7 @@ MISTRAL_API_KEY=your_mistral_api_key
 RESEND_API_KEY=your_resend_api_key
 UPSTASH_REDIS_REST_URL=your_upstash_redis_rest_url
 UPSTASH_REDIS_REST_TOKEN=your_upstash_redis_rest_token
-APP_URL=https://klar.abdulrdeveloper.me
+APP_URL=your_app_url
 ```
 
 4. Run the development server
