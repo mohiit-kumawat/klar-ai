@@ -2,7 +2,7 @@
 
 Klar is an AI tutor for students. You can chat without login, or create an account to unlock saved conversations, verification-based auth, and the full dashboard experience.
 
-Live site: 
+Live site: https://klar-ai-tutor.vercel.app/
 
 ## What It Does
 
